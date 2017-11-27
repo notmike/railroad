@@ -3,12 +3,16 @@ Online Train Reservation System
 
 ## Development setup
 
+Retrieve our project (if you haven't done so already)
+```
+$ git clone https://github.com/notmike/railroad.git
+$ cd railroad
+```
+
 We use [Virtualenv](https://virtualenv.pypa.io/en/stable/) to manage different Python (we will be using python3) environments.
 
 ```
 $ pip install virtualenv
-$ mkdir railroad_proj
-$ cd railroad_proj
 $ virtualenv venv
 $ source ./venv/bin/activate
 ```
@@ -17,14 +21,14 @@ Now your terminal should look like ...
 (venv)railroad_proj $
 ```
 
-Retrieve our project (if you haven't done so already)
-```
-$ git clone https://github.com/notmike/railroad.git
-```
-
 Install dependencies in your environment
 ```
 $ pip install -r requirements.txt
+```
+
+Confirm the requirements packages installed:
+```
+$ pip list
 ```
 
 You should already have MariaDB installed locally, we'll setup a new user & db for this project.
@@ -39,11 +43,31 @@ $ FLUSH PRIVILEGES;
 $ exit;
 ```
 
-Now navigate to our django (sample) settings file:
+Copy 'settings-sample.py' and save as 'settings.py':
 ```
-vim ./railroad/settings-sample.py
+cp ./railroad/settings-sample.py ./railroad/settings.py
 ```
-and edit the "DATABASES" section near the bottom so your database/user names and passwords are what you previously setup (above).
+
+Now edit the django settings file:
+```
+vim ./railroad/settings.py
+```
+Edit the "DATABASES" section near the bottom so 'NAME', 'USER', and 'PASSWORD' are what you previously setup (above).
+```
+DATABASES = {
+    'default': {
+    'ENGINE': 'django.db.backends.mysql',
+    'NAME': 'railroad',                     <--- CONFIRM
+    'USER': 'railroad',                     <--- CONFIRM
+    'PASSWORD':'your-db-user-pw-here',      <--- CONFIRM
+    'HOST': 'localhost',
+    'PORT': '',
+    'OPTIONS': {
+        'init_command': "SET sql_mode='STRICT_ALL_TABLES'",
+        }
+    }
+}
+```
 
 **Once finished, save the file as `settings.py`**
 
