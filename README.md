@@ -73,7 +73,6 @@ Save & Exit.
 
 Make and run [migrations](https://docs.djangoproject.com/en/1.11/topics/migrations/)
 ```
-$ python manage.py makemigrations railroad
 $ python manage.py makemigrations
 $ python manage.py migrate
 ```
