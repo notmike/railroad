@@ -69,7 +69,7 @@ DATABASES = {
 }
 ```
 
-**Once finished, save the file as `settings.py`**
+Save & Exit.
 
 Make and run [migrations](https://docs.djangoproject.com/en/1.11/topics/migrations/)
 ```
