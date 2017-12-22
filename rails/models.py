@@ -49,7 +49,7 @@ class Trains(models.Model):
     train_days = models.IntegerField(blank=True, null=True)
 
     def __str__(self):
-    	return self.train_id
+    	return str(self.train_id)
 
     class Meta:
         db_table = 'trains'
@@ -63,7 +63,7 @@ class Reservations(models.Model):
     billing_address = models.CharField(max_length=100, blank=True, null=True)
 
     def __str__(self):
-    	return self.reservation_id
+    	return str(self.reservation_id)
 
     class Meta:
         db_table = 'reservations'
@@ -76,7 +76,7 @@ class Segments(models.Model):
     seg_fare = models.DecimalField(max_digits=7, decimal_places=2)
 
     def __str__(self):
-    	return self.segment_id
+    	return str(self.segment_id)
 
     class Meta:
         db_table = 'segments'
@@ -89,7 +89,7 @@ class SeatsFree(models.Model):
     freeseat = models.IntegerField()
 
     def __str__(self):
-    	return self.seat_free_date
+    	return str(self.seat_free_date)
 
     class Meta:
         db_table = 'seats_free'
@@ -103,7 +103,7 @@ class StopsAt(models.Model):
     time_out = models.TimeField(blank=True, null=True)
 
     def __str__(self):
-    	return self.time_in + " " + self.time_out 
+    	return str(self.time_in) + " " + str(self.time_out)
 
     class Meta:
         db_table = 'stops_at'
@@ -121,7 +121,7 @@ class Trips(models.Model):
     reservation = models.ForeignKey(Reservations, on_delete=models.DO_NOTHING)
 
     def __str__(self):
-    	return self.trip_id
+    	return str(self.trip_id)
     	
     class Meta:
         db_table = 'trips'
