@@ -83,7 +83,7 @@ class Segments(models.Model):
 
 
 class SeatsFree(models.Model):
-    train = models.ForeignKey(Trains, on_delete=models.DO_NOTHING, primary_key=True)
+    train = models.ForeignKey(Trains, on_delete=models.DO_NOTHING)
     segment = models.ForeignKey(Segments, on_delete=models.DO_NOTHING)
     seat_free_date = models.DateField()
     freeseat = models.IntegerField()
@@ -97,7 +97,7 @@ class SeatsFree(models.Model):
 
 
 class StopsAt(models.Model):
-    train = models.ForeignKey(Trains, on_delete=models.DO_NOTHING, primary_key=True)
+    train = models.ForeignKey(Trains, on_delete=models.DO_NOTHING)
     station = models.ForeignKey(Stations, on_delete=models.DO_NOTHING)
     time_in = models.TimeField(blank=True, null=True)
     time_out = models.TimeField(blank=True, null=True)
