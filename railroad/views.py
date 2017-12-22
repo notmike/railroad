@@ -6,5 +6,5 @@ from django.http import HttpResponseRedirect, HttpResponse, Http404
 # from django.contrib.auth.decorators import login_required
 # from django.urls import reverse
 
-def index(request):
-    return render(request, 'index.html')
+# def index(request):
+#    return render(request, 'index.html')
