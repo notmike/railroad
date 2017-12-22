@@ -8,37 +8,58 @@
         <div class="row">
           <div class="col-md-8 col-md-offset-2 intro-text">
             <h1>We Are ChooChoo Continental<span></span></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sed commodo nibh ante facilisis bibendum.</p>
-            <a href="#features" class="btn btn-custom btn-lg page-scroll">Learn More</a> </div>
+            <p>Check out our awesome train reservation system!</p>
+            <a href="#searchTrains" class="btn btn-custom btn-lg page-scroll">Search Trains</a> </div>
         </div>
       </div>
     </div>
   </div>
 </header>
+
+
+     {% csrf_token %}
+       
+       <br>
+       
+  </form>
+
 <!-- Features Section -->
-<div id="features" class="text-center">
+<div id="searchTrains" class="text-center">
   <div class="container">
     <div class="col-md-10 col-md-offset-1 section-title">
-      <h2>Features</h2>
+      <h2>Search Trains</h2>
     </div>
+    <form role="form" method="POST" action= ""> {% csrf_token %}
+
     <div class="row">
-      <div class="col-xs-6 col-md-3"> <i class="fa fa-comments-o"></i>
-        <h3>Lorem ipsum</h3>
-        <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam.</p>
-      </div>
-      <div class="col-xs-6 col-md-3"> <i class="fa fa-bullhorn"></i>
-        <h3>Dolor sit amet</h3>
-        <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque.</p>
-      </div>
-      <div class="col-xs-6 col-md-3"> <i class="fa fa-group"></i>
-        <h3>Tempus eleifend</h3>
-        <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam.</p>
-      </div>
-      <div class="col-xs-6 col-md-3"> <i class="fa fa-magic"></i>
-        <h3>Pellentesque</h3>
-        <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque.</p>
-      </div>
+        <div class="col-xs-6 col-md-3">
+          <h3>From: </h3>
+          <input id = "station-from" name = "station-from" class="form-control form-control-lg" type="text">
+        </div>
+        <div class="col-xs-6 col-md-3">
+          <h3>To: </h3>
+          <input id = "station-to" name = "station-to" class="form-control form-control-lg" type="text">
+        </div>
+        <div class="col-xs-6 col-md-3">
+          <h3>Date: </h3>
+          <input id = "date" name = "date" class="form-control form-control-lg" type="date">
+        </div>
+        <div class="col-xs-6 col-md-3">
+          <h3>Time of day:</h3>
+          <input id = "station-to" name = "station-to" class="form-control form-control-lg" type="text">
+          
+        </div>
     </div>
+    <br>
+    <div class = "row">
+    <div class="col-md-10 col-md-offset-1 section-title">
+       <button type="submit" class="btn btn-custom btn-lg">Search</button>
+      
+    </div>
+      
+    </div>
+    </form>
+
   </div>
 </div>
 
