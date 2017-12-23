@@ -151,6 +151,10 @@ hr {
 .section-title p {
 	font-size: 18px;
 }
+.btn-submit {
+    margin-top: 150px;
+    margin-bottom: 80px;
+}
 .btn-custom {
 	font-family: 'Raleway', sans-serif;
 	text-transform: uppercase;
@@ -433,7 +437,7 @@ header .intro-text {
 }
 /* Contact Section */
 #contact {
-	padding: 100px 0 60px 0;
+	padding: 40px 0 40px 0;
 	background: linear-gradient(to right, #6372ff 0%, #5ca9fb 100%);
 	color: rgba(255,255,255,.75);
 }
@@ -460,7 +464,7 @@ header .intro-text {
 }
 #contact h3 {
 	color: #fff;
-	margin-top: 80px;
+	margin-top: 40px;
 	margin-bottom: 25px;
 	padding-bottom: 20px;
 	font-weight: 400;
@@ -523,7 +527,7 @@ color: #777;
 color: #777;
 }
 #contact .contact-item {
-	margin: 20px 0;
+	margin: 15px 0;
 }
 #contact .contact-item span {
 	color: rgba(255,255,255,1);

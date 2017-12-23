@@ -1,65 +1,5 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{% block title %}{% endblock %}</title>
-<meta name="description" content="">
-<meta name="author" content="">
-
-<!-- Favicons
-    ================================================== -->
-<link rel="shortcut icon" href={% static "img/favicon.ico" %} type="image/x-icon">
-<link rel="apple-touch-icon" href={% static "img/apple-touch-icon.png" %}>
-<link rel="apple-touch-icon" sizes="72x72" href={% static "img/apple-touch-icon-72x72.png" %}>
-<link rel="apple-touch-icon" sizes="114x114" href={% static "img/apple-touch-icon-114x114.png" %}>
-
-<!-- Bootstrap -->
-<link rel="stylesheet" type="text/css"  href={% static "css/bootstrap.css" %}>
-<link rel="stylesheet" type="text/css" href={% static "fonts/font-awesome/css/font-awesome.css" %}>
-
-<!-- Stylesheet
-    ================================================== -->
-<link rel="stylesheet" type="text/css" href={% static "css/style.css" %}>
-<link rel="stylesheet" type="text/css" href={% static "css/nivo-lightbox/nivo-lightbox.css" %}>
-<link rel="stylesheet" type="text/css" href={% static "css/nivo-lightbox/default.css" %}>
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,700,800,900" rel="stylesheet">
-
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-<!-- Navigation
-    ==========================================-->
-<nav id="menu" class="navbar navbar-default navbar-fixed-top">
-  <div class="container"> 
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-      <a class="navbar-brand page-scroll" href="#page-top">ChooChoo Continental</a> </div>
-    
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#features" class="page-scroll">Features</a></li>
-        <li><a href="#about" class="page-scroll">About</a></li>
-        <li><a href="#services" class="page-scroll">Services</a></li>
-        <li><a href="#portfolio" class="page-scroll">Gallery</a></li>
-        <li><a href="#testimonials" class="page-scroll">Testimonials</a></li>
-        <li><a href="#team" class="page-scroll">Team</a></li>
-        <li><a href="#contact" class="page-scroll">Contact</a></li>
-      </ul>
-    </div>
-    <!-- /.navbar-collapse --> 
-  </div>
-</nav>
+{% extends "main/main.html" %}
+{% block content %}
 <!-- Header -->
 <header id="header">
   <div class="intro">
@@ -68,395 +8,213 @@
         <div class="row">
           <div class="col-md-8 col-md-offset-2 intro-text">
             <h1>We Are ChooChoo Continental<span></span></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sed commodo nibh ante facilisis bibendum.</p>
-            <a href="#features" class="btn btn-custom btn-lg page-scroll">Learn More</a> </div>
+            <p>Check out our awesome train reservation system!</p>
+            <a href="#searchTrains" class="btn btn-custom btn-lg page-scroll">Search Trains</a> </div>
         </div>
       </div>
     </div>
   </div>
 </header>
+
+
+     {% csrf_token %}
+       
+       <br>
+       
+  </form>
+
 <!-- Features Section -->
-<div id="features" class="text-center">
+<div id="searchTrains" class="text-center">
   <div class="container">
     <div class="col-md-10 col-md-offset-1 section-title">
-      <h2>Features</h2>
+      <h2>Search Trains</h2>
     </div>
+
     <div class="row">
-      <div class="col-xs-6 col-md-3"> <i class="fa fa-comments-o"></i>
-        <h3>Lorem ipsum</h3>
-        <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam.</p>
-      </div>
-      <div class="col-xs-6 col-md-3"> <i class="fa fa-bullhorn"></i>
-        <h3>Dolor sit amet</h3>
-        <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque.</p>
-      </div>
-      <div class="col-xs-6 col-md-3"> <i class="fa fa-group"></i>
-        <h3>Tempus eleifend</h3>
-        <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam.</p>
-      </div>
-      <div class="col-xs-6 col-md-3"> <i class="fa fa-magic"></i>
-        <h3>Pellentesque</h3>
-        <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque.</p>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- About Section -->
-<div id="about">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12 col-md-6"> <img src={% static "img/about.jpg" %} class="img-responsive" alt=""> </div>
-      <div class="col-xs-12 col-md-6">
-        <div class="about-text">
-          <h2>About Us</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          <h3>Why Choose Us?</h3>
-          <div class="list-style">
-            <div class="col-lg-6 col-sm-6 col-xs-12">
-              <ul>
-                <li>Lorem ipsum dolor</li>
-                <li>Tempor incididunt</li>
-                <li>Lorem ipsum dolor</li>
-                <li>Incididunt ut labore</li>
-              </ul>
-            </div>
-            <div class="col-lg-6 col-sm-6 col-xs-12">
-              <ul>
-                <li>Aliquip ex ea commodo</li>
-                <li>Lorem ipsum dolor</li>
-                <li>Exercitation ullamco</li>
-                <li>Lorem ipsum dolor</li>
-              </ul>
-            </div>
+    <form method="POST" action= "{% url 'search' %}"> {% csrf_token %}
+
+        <div class="col-xs-6 col-md-3">
+          <h3>From: </h3>
+          <select name="stationFrom" id="stationFrom" class="form-control form-control-lg">
+            <option value="BOS">Boston, MA - South Station</option>
+            <option value="BBY">Boston, MA - Back Bay Station</option>
+            <option value="RTE">Route 128, MA</option>
+            <option value="PVD">Providence, RI</option>
+            <option value="KIN">Kingston, RI</option>
+            <option value="WLY">Westerly,RI</option>
+            <option value="MYS">Mystic, CT</option>
+            <option value="NLC">New London, CT</option>
+            <option value="OSB">Old Saybrook, CT</option>
+            <option value="NHV">New Haven, CT</option>
+            <option value="BRP">Bridgeport, CT</option>
+            <option value="STM">Stamford, CT</option>
+            <option value="NRO">New Rochelle, NY</option>
+            <option value="NYP">New York, NY - Penn Station</option>
+            <option value="NWK">Newark, NJ</option>
+            <option value="EWR">Newark Liberty Intl. Air., NJ</option>
+            <option value="MET">Metro Park, NJ</option>
+            <option value="TRE">Trenton, NJ</option>
+            <option value="PHL">Philadelphia, PA - 30th Street Station</option>
+            <option value="WIL">Wilmington, DE - J.R. Biden, Jr. Station</option>
+            <option value="ABE">Aberdeen, MD</option>
+            <option value="BAL">Baltimore, MD - Penn Station</option>
+            <option value="BWI">BWI Marshall Airport, MD</option>
+            <option value="NCR">New Carrollton, MD</option>
+            <option value="WAS">Washington, DC - Union Station</option>
+          </select>
+        </div>
+        <div class="col-xs-6 col-md-3">
+          <h3>To: </h3>
+          <select name="stationTo" id="stationTo" class="form-control form-control-lg">
+              <option value="BOS">Boston, MA - South Station</option>
+              <option value="BBY">Boston, MA - Back Bay Station</option>
+              <option value="RTE">Route 128, MA</option>
+              <option value="PVD">Providence, RI</option>
+              <option value="KIN">Kingston, RI</option>
+              <option value="WLY">Westerly,RI</option>
+              <option value="MYS">Mystic, CT</option>
+              <option value="NLC">New London, CT</option>
+              <option value="OSB">Old Saybrook, CT</option>
+              <option value="NHV">New Haven, CT</option>
+              <option value="BRP">Bridgeport, CT</option>
+              <option value="STM">Stamford, CT</option>
+              <option value="NRO">New Rochelle, NY</option>
+              <option value="NYP">New York, NY - Penn Station</option>
+              <option value="NWK">Newark, NJ</option>
+              <option value="EWR">Newark Liberty Intl. Air., NJ</option>
+              <option value="MET">Metro Park, NJ</option>
+              <option value="TRE">Trenton, NJ</option>
+              <option value="PHL">Philadelphia, PA - 30th Street Station</option>
+              <option value="WIL">Wilmington, DE - J.R. Biden, Jr. Station</option>
+              <option value="ABE">Aberdeen, MD</option>
+              <option value="BAL">Baltimore, MD - Penn Station</option>
+              <option value="BWI">BWI Marshall Airport, MD</option>
+              <option value="NCR">New Carrollton, MD</option>
+              <option value="WAS">Washington, DC - Union Station</option>
+            </select>
+        </div>
+        <div class="col-xs-6 col-md-3">
+          <h3>Date: </h3>
+          <!-- 2017-11-13 to 2018-11-13 -->
+          <div>
+              <select name="date_year" id="date_year" class="form-control form-control-lg">
+                  <option value="2017">2017</option>
+                  <option value="2018">2018</option>
+                </select>
+                <select name="date_month" id="date_month" class="form-control form-control-lg">
+                    <option value="01">1</option>
+                    <option value="02">2</option>
+                    <option value="03">3</option>
+                    <option value="04">4</option>
+                    <option value="05">5</option>
+                    <option value="06">6</option>
+                    <option value="07">7</option>
+                    <option value="08">8</option>
+                    <option value="09">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                  </select>
+                  <select name="date_day" id="date_day" class="form-control form-control-lg">
+                    <option value="01">1</option>
+                    <option value="02">2</option>
+                    <option value="03">3</option>
+                    <option value="04">4</option>
+                    <option value="05">5</option>
+                    <option value="06">6</option>
+                    <option value="07">7</option>
+                    <option value="08">8</option>
+                    <option value="09">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                    <option value="13">13</option>
+                    <option value="14">14</option>
+                    <option value="15">15</option>
+                    <option value="16">16</option>
+                    <option value="17">17</option>
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
+                    <option value="23">23</option>
+                    <option value="24">24</option>
+                    <option value="25">25</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="28">28</option>
+                    <option value="29">29</option>
+                    <option value="30">30</option>
+                    <option value="31">31</option>
+                  </select>
           </div>
+          
         </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Services Section -->
-<div id="services" class="text-center">
-  <div class="container">
-    <div class="section-title">
-      <h2>Our Services</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed dapibus leonec.</p>
-    </div>
-    <div class="row">
-      <div class="col-md-4"> <i class="fa fa-wordpress"></i>
-        <div class="service-desc">
-          <h3>Lorem ipsum dolor</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.</p>
+        <div class="col-xs-6 col-md-3">
+          <h3>Time of day:</h3>
+            <select class="form-control" name="time-of-day"> 
+              <option value="MOR">Morning</option>
+              <option value="AFT">Afternoon</option>
+              <option value="EVE">Evening</option>
+              <option value="NIT">Night</option>
+            </select>
         </div>
-      </div>
-      <div class="col-md-4"> <i class="fa fa-cart-arrow-down"></i>
-        <div class="service-desc">
-          <h3>Consectetur adipiscing</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-      </div>
-      <div class="col-md-4"> <i class="fa fa-cloud-download"></i>
-        <div class="service-desc">
-          <h3>Lorem ipsum dolor</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.</p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-4"> <i class="fa fa-language"></i>
-        <div class="service-desc">
-          <h3>Consectetur adipiscing</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.</p>
-        </div>
-      </div>
-      <div class="col-md-4"> <i class="fa fa-plane"></i>
-        <div class="service-desc">
-          <h3>Lorem ipsum dolor</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.</p>
-        </div>
-      </div>
-      <div class="col-md-4"> <i class="fa fa-pie-chart"></i>
-        <div class="service-desc">
-          <h3>Consectetur adipiscing</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Gallery Section -->
-<div id="portfolio" class="text-center">
-  <div class="container">
-    <div class="section-title">
-      <h2>Gallery</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed dapibus leonec.</p>
-    </div>
-    <div class="row">
-      <div class="portfolio-items">
-        <div class="col-sm-6 col-md-4 col-lg-4">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href={% static "img/portfolio/01-large.jpg" %} title="Project Title" data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <h4>Lorem Ipsum</h4>
-              </div>
-              <img src={% static "img/portfolio/01-small.jpg" %} class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href={% static "img/portfolio/02-large.jpg" %} title="Project Title" data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <h4>Adipiscing Elit</h4>
-              </div>
-              <img src={% static "img/portfolio/02-small.jpg" %} class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href={% static "img/portfolio/03-large.jpg" %} title="Project Title" data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <h4>Lorem Ipsum</h4>
-              </div>
-              <img src={% static "img/portfolio/03-small.jpg" %} class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href={% static "img/portfolio/04-large.jpg" %} title="Project Title" data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <h4>Lorem Ipsum</h4>
-              </div>
-              <img src={% static "img/portfolio/04-small.jpg" %} class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href={% static "img/portfolio/05-large.jpg" %} title="Project Title" data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <h4>Adipiscing Elit</h4>
-              </div>
-              <img src={% static "img/portfolio/05-small.jpg" %} class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href={% static "img/portfolio/06-large.jpg" %} title="Project Title" data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <h4>Dolor Sit</h4>
-              </div>
-              <img src={% static "img/portfolio/06-small.jpg" %} class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href={% static "img/portfolio/07-large.jpg" %} title="Project Title" data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <h4>Dolor Sit</h4>
-              </div>
-              <img src={% static "img/portfolio/07-small.jpg" %} class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href={% static "img/portfolio/08-large.jpg" %} title="Project Title" data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <h4>Lorem Ipsum</h4>
-              </div>
-              <img src={% static "img/portfolio/08-small.jpg" %} class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-4">
-          <div class="portfolio-item">
-            <div class="hover-bg"> <a href={% static "img/portfolio/09-large.jpg" %} title="Project Title" data-lightbox-gallery="gallery1">
-              <div class="hover-text">
-                <h4>Adipiscing Elit</h4>
-              </div>
-              <img src={% static "img/portfolio/09-small.jpg" %} class="img-responsive" alt="Project Title"> </a> </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Testimonials Section -->
-<div id="testimonials">
-  <div class="container">
-    <div class="section-title text-center">
-      <h2>What our clients say</h2>
-    </div>
-    <div class="row">
-      <div class="col-md-4">
-        <div class="testimonial">
-          <div class="testimonial-image"> <img src={% static "img/testimonials/01.jpg" %} alt=""> </div>
-          <div class="testimonial-content">
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."</p>
-            <div class="testimonial-meta"> - John Doe </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="testimonial">
-          <div class="testimonial-image"> <img src={% static "img/testimonials/02.jpg" %} alt=""> </div>
-          <div class="testimonial-content">
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis."</p>
-            <div class="testimonial-meta"> - Johnathan Doe </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="testimonial">
-          <div class="testimonial-image"> <img src={% static "img/testimonials/03.jpg" %} alt=""> </div>
-          <div class="testimonial-content">
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."</p>
-            <div class="testimonial-meta"> - John Doe </div>
-          </div>
-        </div>
-      </div>
-      <div class="row"> </div>
-      <div class="col-md-4">
-        <div class="testimonial">
-          <div class="testimonial-image"> <img src={% static "img/testimonials/04.jpg" %} alt=""> </div>
-          <div class="testimonial-content">
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."</p>
-            <div class="testimonial-meta"> - Johnathan Doe </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="testimonial">
-          <div class="testimonial-image"> <img src={% static "img/testimonials/05.jpg" %} alt=""> </div>
-          <div class="testimonial-content">
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."</p>
-            <div class="testimonial-meta"> - John Doe </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="testimonial">
-          <div class="testimonial-image"> <img src={% static "img/testimonials/06.jpg" %} alt=""> </div>
-          <div class="testimonial-content">
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis."</p>
-            <div class="testimonial-meta"> - Johnathan Doe </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Team Section -->
-<div id="team" class="text-center">
-  <div class="container">
-    <div class="col-md-8 col-md-offset-2 section-title">
-      <h2>Meet the Team</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed dapibus leonec.</p>
-    </div>
-    <div id="row">
-      <div class="col-md-3 col-sm-6 team">
-        <div class="thumbnail"> <img src={% static "img/team/01.jpg" %} alt="..." class="team-img">
-          <div class="caption">
-            <h4>John Doe</h4>
-            <p>Director</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6 team">
-        <div class="thumbnail"> <img src={% static "img/team/02.jpg" %} alt="..." class="team-img">
-          <div class="caption">
-            <h4>Mike Doe</h4>
-            <p>Senior Designer</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6 team">
-        <div class="thumbnail"> <img src={% static "img/team/03.jpg" %} alt="..." class="team-img">
-          <div class="caption">
-            <h4>Jane Doe</h4>
-            <p>Senior Designer</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6 team">
-        <div class="thumbnail"> <img src={% static "img/team/04.jpg" %} alt="..." class="team-img">
-          <div class="caption">
-            <h4>Karen Doe</h4>
-            <p>Project Manager</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- Contact Section -->
-<div id="contact">
-  <div class="container">
-    <div class="col-md-8">
-      <div class="row">
-        <div class="section-title">
-          <h2>Get In Touch</h2>
-          <p>Please fill out the form below to send us an email and we will get back to you as soon as possible.</p>
-        </div>
-        <form name="sentMessage" id="contactForm" novalidate>
-          <div class="row">
-            <div class="col-md-6">
-              <div class="form-group">
-                <input type="text" id="name" class="form-control" placeholder="Name" required="required">
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <div class="form-group">
-                <input type="email" id="email" class="form-control" placeholder="Email" required="required">
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <textarea name="message" id="message" class="form-control" rows="4" placeholder="Message" required></textarea>
-            <p class="help-block text-danger"></p>
-          </div>
-          <div id="success"></div>
-          <button type="submit" class="btn btn-custom btn-lg">Send Message</button>
+        <div class="btn-submit btn-block col-md-12">
+         <button name = "submit" type="submit" class="btn btn-custom btn-lg">Search</button>
         </form>
-      </div>
-    </div>
-    <div class="col-md-3 col-md-offset-1 contact-info">
-      <div class="contact-item">
-        <h3>Contact Info</h3>
-        <p><span><i class="fa fa-map-marker"></i> Address</span>4321 California St,<br>
-          San Francisco, CA 12345</p>
-      </div>
-      <div class="contact-item">
-        <p><span><i class="fa fa-phone"></i> Phone</span> +1 123 456 1234</p>
-      </div>
-      <div class="contact-item">
-        <p><span><i class="fa fa-envelope-o"></i> Email</span> info@company.com</p>
-      </div>
-    </div>
-    <div class="col-md-12">
-      <div class="row">
-        <div class="social">
-          <ul>
-            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-          </ul>
-        </div>
-      </div>
+    </form>
+        
     </div>
   </div>
 </div>
-<!-- Footer Section -->
-<div id="footer">
-  <div class="container text-center">
-    <p>&copy; 2017 ChooChoo Continental</p>
+<div class="text-center">
+    <div class="container">
+        {% if avail_trains %}
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">train_id</th>
+                <th scope="col">start_station</th>
+                <th scope="col">end_station</th>
+                <th scope="col">travel_date</th>
+                <th scope="col">time_of_day</th>
+                <th scope="col">seats_free</th>
+                <th scope="col">chosen</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+                {% for each in avail_trains %}
+                  <tr>
+                    <th scope="row">{{each.train_id}}</th>
+                    <td>{{each.start_station}}</td>
+                    <td>{{each.end_station}}</td>
+                    <td>{{each.travel_date}}</td>
+                    <td>{{each.time_of_day}}</td>
+                    <td>{{each.seats_free}}</td>
+                    <td>{{each.chosen}}</td>
+                    <td>
+                      <form method="POST" action="/make-reservations/"> {% csrf_token %}
+                        <input class="hidden_input" name="ti" type="text" value="{{each.train_id}}">
+                        <input class="hidden_input" name="ss" type="text" value="{{each.start_station}}">
+                        <input class="hidden_input" name="es" type="text" value="{{each.end_station}}">
+                        <input class="hidden_input" name="trd" type="text" value="{{each.travel_date}}">
+                        <input class="hidden_input" name="tod" type="text" value="{{each.time_of_day}}">
+                        <input class="hidden_input" name="sf" type="text" value="{{each.seats_free}}">
+                        <input class="hidden_input" name="cho" type="text" value="{{each.chosen}}">
+                        <button class="btn btn-primary btn-sm">Book</button>
+                      </form>
+                    </td>
+                  </tr>
+                {% endfor %}
+          </table>
+          {% endif %}
+    </div>
   </div>
-</div>
-<script type="text/javascript" src={% static "js/jquery.1.11.1.js" %}></script> 
-<script type="text/javascript" src={% static "js/bootstrap.js" %}></script> 
-<script type="text/javascript" src={% static "js/SmoothScroll.js" %}></script> 
-<script type="text/javascript" src={% static "js/nivo-lightbox.js" %}></script> 
-<script type="text/javascript" src={% static "js/jqBootstrapValidation.js" %}></script> 
-<script type="text/javascript" src={% static "js/contact_me.js" %}></script> 
-<script type="text/javascript" src={% static "js/main.js" %}></script>
-</body>
-</html>
+<style>
+  .hidden_input {
+    display: none;
+  }
+</style>
+{% endblock %}
