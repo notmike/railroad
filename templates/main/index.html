@@ -194,12 +194,27 @@
                     <td>{{each.time_of_day}}</td>
                     <td>{{each.seats_free}}</td>
                     <td>{{each.chosen}}</td>
-                    <td><button class="btn btn-primary btn-sm">Book</button></td>
+                    <td>
+                      <form method="POST" action="/make-reservations/"> {% csrf_token %}
+                        <input class="hidden_input" name="ti" type="text" value="{{each.train_id}}">
+                        <input class="hidden_input" name="ss" type="text" value="{{each.start_station}}">
+                        <input class="hidden_input" name="es" type="text" value="{{each.end_station}}">
+                        <input class="hidden_input" name="trd" type="text" value="{{each.travel_date}}">
+                        <input class="hidden_input" name="tod" type="text" value="{{each.time_of_day}}">
+                        <input class="hidden_input" name="sf" type="text" value="{{each.seats_free}}">
+                        <input class="hidden_input" name="cho" type="text" value="{{each.chosen}}">
+                        <button class="btn btn-primary btn-sm">Book</button>
+                      </form>
+                    </td>
                   </tr>
                 {% endfor %}
           </table>
           {% endif %}
     </div>
   </div>
-
+<style>
+  .hidden_input {
+    display: none;
+  }
+</style>
 {% endblock %}
