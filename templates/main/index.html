@@ -22,23 +22,29 @@
        <br>
        
   </form>
-
+<style>
+  #search_title {
+    margin-top: 110px;
+  }
+</style>
 <!-- Features Section -->
 <div id="searchTrains" class="text-center">
   <div class="container">
     <div class="col-md-10 col-md-offset-1 section-title">
-      <h2>Search Trains</h2>
+      <h2 id="search_title">Search Trains</h2>
     </div>
     <form role="form" method="POST" action= ""> {% csrf_token %}
 
     <div class="row">
         <div class="col-xs-6 col-md-3">
           <h3>From: </h3>
-          <input id = "station-from" name = "station-from" class="form-control form-control-lg" type="text">
+          <select name="station-from" id="station-from" class="form-control form-control-lg"></select>
+          <!-- <input id = "station-from" name = "station-from" class="form-control form-control-lg" type="text"> -->
         </div>
         <div class="col-xs-6 col-md-3">
           <h3>To: </h3>
-          <input id = "station-to" name = "station-to" class="form-control form-control-lg" type="text">
+          <select name="station-to" id="station-to" class="form-control form-control-lg"></select>
+          <!-- <input id = "station-to" name = "station-to" class="form-control form-control-lg" type="text"> -->
         </div>
         <div class="col-xs-6 col-md-3">
           <h3>Date: </h3>
