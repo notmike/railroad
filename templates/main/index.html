@@ -29,16 +29,17 @@
     <div class="col-md-10 col-md-offset-1 section-title">
       <h2>Search Trains</h2>
     </div>
-    <form role="form" method="POST" action= "/search"> {% csrf_token %}
 
     <div class="row">
+    <form method="POST" action= "{% url 'search' %}"> {% csrf_token %}
+
         <div class="col-xs-6 col-md-3">
           <h3>From: </h3>
-          <input id = "station-from" name = "station-from" class="form-control form-control-lg" type="text">
+          <input id = "stationFrom" name = "stationFrom" class="form-control form-control-lg" type="text">
         </div>
         <div class="col-xs-6 col-md-3">
           <h3>To: </h3>
-          <input id = "station-to" name = "station-to" class="form-control form-control-lg" type="text">
+          <input id = "stationTo" name = "stationTo" class="form-control form-control-lg" type="text">
         </div>
         <div class="col-xs-6 col-md-3">
           <h3>Date: </h3>
@@ -47,22 +48,19 @@
         <div class="col-xs-6 col-md-3">
           <h3>Time of day:</h3>
             <select class="form-control" name="time-of-day"> 
-              <option value="mor">Morning</option>
-              <option value="aft">Afternoon</option>
-              <option value="eve">Evening</option>
-              <option value="nit">Night</option>
+              <option value="MOR">Morning</option>
+              <option value="AFT">Afternoon</option>
+              <option value="EVE">Evening</option>
+              <option value="NIT">Night</option>
             </select>
         </div>
-    </div>
-    <br>
-    <div class = "row">
-      <div class="col-md-10 col-md-offset-1 section-title">
-         <button type="submit" class="btn btn-custom btn-lg">Search</button>
-        
-      </div>
-      
-    </div>
+        <div class="col-xs-6 col-md-3">
+         <button name = "submit" type="submit" class="btn btn-custom btn-lg">Search</button>
+        </form>
     </form>
+        
+    </div>
+    
       <div class = "row">
       <div class="col-md-10 col-md-offset-1 section-title">
         All Trains:
