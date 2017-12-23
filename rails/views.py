@@ -62,6 +62,9 @@ def make_reservation(request):
     data["chosen"] = cho
     return render(request, 'main/reservation.html', {"selected":data})
 
+def view_reservation(request):
+    return render(request, 'main/view-res.html')
+
 def book_ticket(request):
     last_name=""
     first_name=""
