@@ -8,5 +8,6 @@ mysql -u root -p --database=railroad < ./sql/stations.sql
 mysql -u root -p --database=railroad < ./sql/stops_at.sql
 mysql -u root -p --database=railroad < ./sql/trains.sql
 mysql -u root -p --database=railroad < ./sql/tickets.sql
+mysql -u root -p --database=railroad < ./sql/avail_trains.sql
 mysql -u root -p --database=railroad < ./procs/get_avail_trains.sql
 mysql -u root -p --database=railroad < ./procs/get_ticket.sql
